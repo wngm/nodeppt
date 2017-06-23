@@ -1,0 +1,26 @@
+{
+  "name": "nodeppts",
+  "version": "1.0.0",
+  "description": "Development based on nodeppt 1.先试试nodeppt",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodeppt start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wngzhe/nodeppt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wngzhe/nodeppt/issues"
+  },
+  "homepage": "https://github.com/wngzhe/nodeppt#readme",
+  "dependencies": {
+    "nodeppt": "^1.4.4"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
