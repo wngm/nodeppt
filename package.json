@@ -21,6 +21,7 @@
     "nodeppt": "^1.4.4"
   },
   "devDependencies": {
-    "cross-env": "^5.0.1"
+    "cross-env": "^5.0.1",
+    "express": "^4.15.3"
   }
 }
