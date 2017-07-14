@@ -17,4 +17,4 @@ mongoose.connection.on('disconnected', function () {
 
 
 
-model.exports=mongoose;
+module.exports=mongoose;
