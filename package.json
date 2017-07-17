@@ -4,7 +4,8 @@
   "description": "Development based on nodeppt 1.先试试nodeppt",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodeppt start"
+    "dev": "cross-env NODE_ENV=development nodeppt start",
+    "start": "cross-env NODE_ENV=development node ./main/server.js"
   },
   "repository": {
     "type": "git",

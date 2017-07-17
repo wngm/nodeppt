@@ -1,4 +1,5 @@
 var express=require('express');
+var http=require('http');
 var path= require('path');
 var fs=require('fs')
 // var mongoose=require('./mongodb_setting');
@@ -29,6 +30,12 @@ app.get('/a',function(req,res){
     }else{
         res.send('home page')
     }
+
+})
+app.get('/aj',function(req,res){
+    console.log(req.get('a'))
+    res.type('json')
+    res.send({a:'2323',b:'wewe ',c:'汉子'})
 
 })
 app.get('/b',function(req,res){
@@ -123,5 +130,13 @@ app.use(function(req,res,next){
     res.status(404)
     res.send('404 page not found')
 })
-app.listen(3000)
+// app.listen(3000)
 // app.set('port',process.env.PORT)
+//------https---
+// var options={
+//     key:fs.readFileSync(path.join(__dirname,'../ssl/meadowlark.pem')),
+//     cert:fs.readFileSync(path.join(__dirname,'../ssl/meadowlark.crt')),
+// };
+http.createServer(app).listen(3000,function(){
+    console.log('http started in 3000')
+})
