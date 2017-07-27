@@ -1,4 +1,13 @@
-(function ($win, $doc, $B, loadJS, loadCSS, undefined) {
+var classppt=function ($win, $doc, $B, loadJS, loadCSS, undefined) {
+    //修改nodeppt  可控制
+    var controls={};
+    controls.next=function(){
+        createKeyEvent(39)
+    };
+    controls.before=function(){
+        createKeyEvent(38)
+    };
+
     //用于单页ppt预加载资源
     var preloadFn = {
         loadJS: loadJS,
@@ -1382,5 +1391,9 @@
             // console.log('Powered By nodePPT, %c https://github.com/ksky521/nodePPT', 'color:red');
             // console.log('Install nodePPT: %c npm install -g nodeppt', 'color:red');
         }
-    } catch (e) {}
-}(window, document, MixJS.event.broadcast, MixJS.loadJS, MixJS.loadCSS));
+    } catch (e) {};
+
+
+    return controls;
+};
+var _ppt=classppt(window, document, MixJS.event.broadcast, MixJS.loadJS, MixJS.loadCSS);

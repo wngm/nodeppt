@@ -1,0 +1,21 @@
+{
+  "name": "nodeppts",
+  "description": "Development based on nodeppt ",
+  "main": "index.js",
+  "authors": [
+    "wng <404313843@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/wngzhe/nodeppt",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "recordrtc": "^5.4.2"
+  }
+}

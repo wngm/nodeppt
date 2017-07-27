@@ -1,17 +1,17 @@
-title: nodeppt markdown 演示
+title: ppt演示 markdown 演示
 speaker: 三水清
 url: https://github.com/ksky521/nodePPT
 transition: slide3
-files: /js/demo.js,/css/demo.css,/js/zoom.js
+files: /ppts/js/demo.js,/ppts/css/demo.css,/js/zoom.js
 theme: moon
 usemathjax: yes
 
 [slide]
-# nodePPT
+# ppt演示
 ## 这可能是迄今为止最好的网页版演示库
-<small style="vertical-align:middle;display:inline-block"><iframe src="http://ghbtns.com/github-btn.html?user=ksky521&repo=nodeppt&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" style="width:110px;height:20px;  background-color: transparent;"></iframe><iframe src="http://ghbtns.com/github-btn.html?user=ksky521&repo=nodeppt&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" style="width:110px;height:20px;  background-color: transparent;"></iframe><iframe src="http://ghbtns.com/github-btn.html?user=ksky521&repo=nodeppt&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20" style="width:170px;height:20px;  background-color: transparent;"></iframe></small>
+<small style="vertical-align:middle;display:inline-block"><iframe src="http://ghbtns.com/github-btn.html?user=ksky521&repo=ppt演示&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" style="width:110px;height:20px;  background-color: transparent;"></iframe><iframe src="http://ghbtns.com/github-btn.html?user=ksky521&repo=nodeppt&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" style="width:110px;height:20px;  background-color: transparent;"></iframe><iframe src="http://ghbtns.com/github-btn.html?user=ksky521&repo=nodeppt&type=follow&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="20" style="width:170px;height:20px;  background-color: transparent;"></iframe></small>
 [slide]
-## 为什么选择nodePPT
+## 为什么选择ppt演示
 ----
 * 基于GFM的markdown语法编写 {:&.rollIn}
 * 支持html混排，再复杂的demo也可以做！
@@ -36,7 +36,7 @@ usemathjax: yes
 [slide]
 
 # 样式展示 {:&.flexbox.vleft}
-> nodePPT 让每个人都爱上做分享！
+> ppt演示 让每个人都爱上做分享！
 
 
 
@@ -66,11 +66,11 @@ usemathjax: yes 启用MathJax渲染公式
 
 
 
-[slide style="background-image:url('/img/bg1.png')"]
+[slide style="background-image:url('/ppts/img/bg1.png')"]
 
 # 支持添加背景图片 {:&.flexbox.vleft}
 
-使用方法：&#91;slide style="background-image:url('/img/bg1.png')"&#93;
+使用方法：&#91;slide style="background-image:url('/ppts/img/bg1.png')"&#93;
 
 完全style写法，更加灵活，视频背景、repeat背景更不在话下
 
@@ -274,18 +274,18 @@ nodeppt：https://github.com/ksky521/nodePPT
 ## 演示magic标签效果
 -----
 <div class="columns3">
-    <img src="/girl.jpg" height="450">
-    <img src="/girl.jpg" height="450">
-    <img src="/girl.jpg" height="450">
+    <img src="/ppts/girl.jpg" height="450">
+    <img src="/ppts/girl.jpg" height="450">
+    <img src="/ppts/girl.jpg" height="450">
 </div>
 ========
 ## 演示earthquake转场效果
 -----
 <div class="columns4">
-    <img src="/girl.jpg" height="320">
-    <img src="/girl.jpg" height="320">
-    <img src="/girl.jpg" height="320">
-    <img src="/girl.jpg" height="320">
+    <img src="/ppts/girl.jpg" height="320">
+    <img src="/ppts/girl.jpg" height="320">
+    <img src="/ppts/girl.jpg" height="320">
+    <img src="/ppts/girl.jpg" height="320">
 </div>
 [/magic]
 
@@ -294,9 +294,9 @@ nodeppt：https://github.com/ksky521/nodePPT
 [magic data-transition="cover-circle"]
 ## 换个magic动效效果
 ----
-![](/girl.jpg)
+![](/ppts/girl.jpg)
 ====
-![](/girl.jpg)
+![](/ppts/girl.jpg)
 [/magic]
 
 
@@ -414,7 +414,7 @@ nodeppt：https://github.com/ksky521/nodePPT
 ## 图片，点击全屏
 ----
 
-![小萝莉](/girl.jpg "小萝莉")
+![小萝莉](/ppts/girl.jpg "小萝莉")
 
 
 [slide]
@@ -422,7 +422,7 @@ nodeppt：https://github.com/ksky521/nodePPT
 ## 图片，禁止全屏
 ----
 
-<img src="/girl.jpg" class="no-screenfull">
+<img src="/ppts/girl.jpg" class="no-screenfull">
 
 [slide]
 [note]

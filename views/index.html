@@ -7,13 +7,22 @@
 <body>
     <h1>测试</h1>
 <div>
-    <iframe id="iframe" src="http://127.0.0.1:3000/test" style="height: 600px;width: 800px;" frameborder="0"></iframe>
+    <iframe id="iframe1" src="http://127.0.0.1:3000/test" style="height: 600px;width: 800px;" frameborder="0"></iframe>
 </div>
+<button id="btn">点击</button>
+<button id="next">next</button>
+<button id="before">before</button>
+    <br>
+<button id="begin">开始</button>
+<button id="stop">暂停</button>
+<button id="contine">继续</button>
+<button id="reset">重制</button>
 </body>
+<script src="/bower/recordrtc/RecordRTC.js"></script>
+<script src="/bower/jquery/dist/jquery.min.js"></script>
 <script>
     document.addEventListener('keyup',function(e){
         console.dir(e);
-        alert(e.keyCode)
 //        var s=document.getElementById('iframe').contentWindow.document
 //        s.dispatchEvent(e)
     })
@@ -25,5 +34,61 @@ var s=document.createEvent('KeyboardEvent')
     var co= new Event('keyup',{keyCode:60});
     document.dispatchEvent(co)
 
+</script>
+<script>
+
+
+    //只支持chrome FireFox 最新使用navigator.mediaDevices
+    $('#next').on('click',function(){
+        var s=document.getElementById('iframe1');
+        s.contentWindow._ppt.next();
+    });
+    $('#before').on('click',function(){
+        var s=document.getElementById('iframe1');
+        s.contentWindow._ppt.before();
+    })
+    $('#btn').on('click',function(){
+        //同域解决
+        var s=document.getElementById('iframe');
+        s.contentWindow.test();
+
+        //跨域解决方案
+        var o = document.getElementsByTagName('iframe')[0];
+        o.contentWindow.postMessage('Hello world','http://127.0.0.1:3000');
+    });
+
+
+
+//    $.ajax({
+//        url:'/aj?age=28&sex=nan',
+//        type:'POST',
+//        data:{name:'weng'},
+//        success:function(msg){
+//            console.log(msg)
+//        }
+//    })
+</script>
+<script>
+    function captureMicrophone(callback) {
+        navigator.getUserMedia = navigator.getUserMedia || navigator.mozGetUserMedia || navigator.webkitGetUserMedia;
+        navigator.getUserMedia({audio: true}, callback, function(error) {
+            alert('Unable to access your microphone.');
+            console.error(error);
+        });
+    }
+    var recordRTC = RecordRTC({ type: 'audio' });
+
+    $('#begin').on('click',function(){
+        recordRTC.startRecording();
+    })
+    $('#stop').on('click',function(){
+        recordRTC.stopRecording();
+    })
+//    recordRTC.stopRecording(function(audioURL) {
+//        audio.src = audioURL;
+//
+//        var recordedBlob = recordRTC.getBlob();
+//        recordRTC.getDataURL(function(dataURL) { });
+//    });
 </script>
 </html>

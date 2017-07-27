@@ -1,6 +1,7 @@
 var express=require('express');
 var http=require('http');
 var path= require('path');
+var bodyParser = require('body-parser');
 var fs=require('fs')
 // var mongoose=require('./mongodb_setting');
 var md_parser=require('../lib/md_parser');
@@ -10,9 +11,13 @@ var md_parser=require('../lib/md_parser');
 var app=express()
 app.set('views','../views');
 // app.use(express.static(path.join(__dirname, '../views')));
+// app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(express.static(path.join(__dirname, '../assets')));
 app.use('/im',express.static(path.join(__dirname, '../img')));
+app.use('/ppts',express.static(path.join(__dirname, '../ppts')));
+app.use('/bower',express.static(path.join(__dirname, '../bower_components')));
+app.use(bodyParser());
 
 app.get('/',function(req,res){
     let login=true;
@@ -32,8 +37,12 @@ app.get('/a',function(req,res){
     }
 
 })
-app.get('/aj',function(req,res){
-    console.log(req.get('a'))
+
+app.post('/aj',function(req,res){
+    console.log(req.query)
+    console.log('body='+req.body)
+    console.log('req type='+req.type)
+    // console.dir(req)
     res.type('json')
     res.send({a:'2323',b:'wewe ',c:'汉子'})
 
@@ -112,7 +121,13 @@ app.get('/test',function(req,res){
 
 
 })
+app.get('/listen',function(req,res){
+    // res.type('.html');
+    let url =path.join(__dirname, '../views/listen.html')
+    res.sendfile(url);
 
+
+})
 app.use('/',function(err,req,res,next){
     console.log('get err')
     next(err)
@@ -130,13 +145,13 @@ app.use(function(req,res,next){
     res.status(404)
     res.send('404 page not found')
 })
-// app.listen(3000)
+app.listen(3000)
 // app.set('port',process.env.PORT)
 //------https---
 // var options={
 //     key:fs.readFileSync(path.join(__dirname,'../ssl/meadowlark.pem')),
 //     cert:fs.readFileSync(path.join(__dirname,'../ssl/meadowlark.crt')),
 // };
-http.createServer(app).listen(3000,function(){
-    console.log('http started in 3000')
-})
+// http.createServer(options,app).listen(3000,function(){
+//     console.log('http started in 3000')
+// })
